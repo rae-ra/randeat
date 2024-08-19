@@ -1,11 +1,15 @@
 /* CardsContainer.css */
 .cards-container {
-    height: 50%;
-    margin-top: 10vw;
+    height: 90%;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: clip;
+    overflow-y: hidden;
+    z-index: -1;
 }
 
 .card-wrapper {
@@ -58,6 +62,7 @@
     background-color: #ccc;
     border-radius: 50%;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .progress-dot.active {

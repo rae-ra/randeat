@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Card from './Card';
 import './CardsContainer.css';
 
-function CardsContainer({ cardsData }) {
+function CardsContainer({ cardsData, autoplay, autoplaySpeed }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = () => {
@@ -10,6 +10,14 @@ function CardsContainer({ cardsData }) {
             setCurrentIndex((prevIndex) => prevIndex + 1);
         }
     };
+    useEffect(() => {
+        const timer = autoplay && setTimeout(() => {
+            setCurrentIndex((currentIndex + 1) % cardsData.length);
+        }, autoplaySpeed);
+
+        // Cleanup the timer on unmount or when currentIndex changes
+        return () => clearTimeout(timer);
+    }, [currentIndex, cardsData.length, autoplay]);
 
     const handlePrev = () => {
         if (currentIndex > 0) {
@@ -48,6 +56,7 @@ function CardsContainer({ cardsData }) {
                     <div
                         key={index}
                         className={`progress-dot ${index === currentIndex ? 'active' : ''}`}
+                        onClick={e => setCurrentIndex(index)}
                     />
                 ))}
             </div>

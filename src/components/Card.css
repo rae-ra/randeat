@@ -22,12 +22,20 @@
     opacity: 1;
     transform: scale(1);
 }
+.card-image {
+    display: flex;           /* Use flexbox to align the image */
+    justify-content: flex-start; /* Align to the left */
+    align-items: center;     /* Vertically center the image */
+    height: 100%;            /* Ensure the parent height is occupied */
+}
+
 .card-image img {
-    width: 50%;
+    width: 100%;             /* Image occupies the full width of its container */
     height: auto;
+    max-width: 50%;          /* Ensure the image only takes up 50% of the parent's width */
     border-radius: 8px;
     margin-bottom: 15px;
-
+    object-fit: cover;       /* Ensure the image covers the area */
 }
 
 .card-content {
