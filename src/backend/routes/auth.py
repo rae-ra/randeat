@@ -1,8 +1,11 @@
+import logging
+
 from flask import Blueprint, request, jsonify, current_app
 from src.backend.models.user import User
 from src.backend.utils.jwt import create_token
 
 auth_bp = Blueprint('auth', __name__)
+
 
 @auth_bp.route('/register', methods=['POST'])
 def register():
@@ -18,6 +21,7 @@ def register():
     user_model.create_user(username, email, password)
     return jsonify({"message": "User created successfully"}), 201
 
+
 @auth_bp.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -26,7 +30,8 @@ def login():
 
     user_model = User(current_app.config['db'])
     user = user_model.find_by_username(username)
-    if not user or not user_model.validate_password(user['password'], password):
+    if not user or not user_model.validate_password(user['password'],
+                                                    password):
         return jsonify({"message": "Invalid credentials"}), 401
 
     token = create_token(identity={"username": username})

@@ -40,6 +40,8 @@ function NavbarMenu({closeNavbar, isOpen}) {
                 {nali("/create-recipe", "Create Recipe")}
                 {nali("/recipes", "Recipes")}
                 {nali("/about", "About")}
+                {nali("/register", "Register")}
+                {nali("/login", "Login")}
             </ul>
         </div>
     );
