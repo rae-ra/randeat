@@ -5,6 +5,7 @@ import App from './frontend/App';
 import reportWebVitals from './frontend/reportWebVitals';
 
 import axios from 'axios';
+import {AuthProvider} from "./frontend/components/auth/AuthContext";
 
 // Set the base URL for Axios
 axios.defaults.baseURL = 'http://localhost:5000'; // Change this to your backend's base URL
@@ -13,7 +14,9 @@ axios.defaults.baseURL = 'http://localhost:5000'; // Change this to your backend
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+        <App />
+    </AuthProvider>
   </React.StrictMode>
 );
 

@@ -9,10 +9,8 @@ import './App.css';
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/auth/PrivateRoute";
-
-function Dashboard() {
-    return null;
-}
+import Logout from "./components/auth/Logout";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -28,6 +26,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                <Route path="/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
             </Routes>
           </header>
         </div>

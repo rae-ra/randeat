@@ -13,6 +13,7 @@ def register():
     username = data.get('username')
     email = data.get('email')
     password = data.get('password')
+    print(username, email, password)
 
     user_model = User(current_app.config['db'])
     if user_model.find_by_username(username):
@@ -27,6 +28,7 @@ def login():
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
+    print(username, password)
 
     user_model = User(current_app.config['db'])
     user = user_model.find_by_username(username)
