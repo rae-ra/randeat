@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from './AuthContext';  // Import useAuth from the AuthProvider
+import './Login.css';
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -21,14 +22,12 @@ function Login() {
         } catch (error) {
             console.error("Login error", error);
             setWrongPass(true);
-            // Optionally, you can add error handling logic here, like setting an error state to display a message to the user
         }
     };
 
     return (
         <div>
             <h2>Login</h2>
-            {wrongPass && <p>USERNAME OR PASSWORD INCORRECT, TRY AGAIN</p>}
             <form onSubmit={handleLogin}>
                 <input
                     type="text"
@@ -44,8 +43,9 @@ function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-                <button type="submit">Login</button>
+                <button type="submit" className="submit">Login</button>
             </form>
+            {wrongPass && <div className="wrong">WRONG USERNAME OR PASSWORD, PLEASE TRY AGAIN</div>}
         </div>
     );
 }

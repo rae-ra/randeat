@@ -1,6 +1,5 @@
-import logging
-
 from flask import Blueprint, request, jsonify, current_app
+
 from src.backend.models.user import User
 from src.backend.utils.jwt import create_token
 
@@ -28,7 +27,6 @@ def login():
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
-    print(username, password)
 
     user_model = User(current_app.config['db'])
     user = user_model.find_by_username(username)
@@ -38,3 +36,6 @@ def login():
 
     token = create_token(identity={"username": username})
     return jsonify({"token": token}), 200
+
+# sudo service mongod restart
+# sudo systemctl status mongod
