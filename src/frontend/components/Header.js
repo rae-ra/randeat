@@ -32,17 +32,20 @@ function nali(to, text) {
 }
 
 function NavbarMenu({ closeNavbar }) {
-    const { isAuthenticated, logout } = useAuth();
-
+    const { isAuthenticated, logout, userIdentity} = useAuth();
+    const isChef = () => {
+        console.log(userIdentity)
+        return userIdentity.role === 'chef'
+    }
     return (
         <div id="navbar-menu" className="sidebar right" onClick={closeNavbar}>
             <ul className="navbar-links" onClick={(e) => e.stopPropagation()}>
                 {nali("/", "Home")}
-                {nali("/create-recipe", "Create Recipe")}
                 {nali("/recipes", "Recipes")}
                 {nali("/about", "About")}
                 {!isAuthenticated && nali("/register", "Register")}
                 {!isAuthenticated && nali("/login", "Login")}
+                {isAuthenticated && isChef() && nali("/create-recipe", "Create Recipe")}
                 {isAuthenticated && nali("/dashboard", "Dashboard")}
                 {isAuthenticated && (
                     <li className="navbar-item">

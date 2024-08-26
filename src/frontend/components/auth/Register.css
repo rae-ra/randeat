@@ -1,9 +1,4 @@
-.wrong{
-    color: red;
-    font-family: monospace;
-    font-size: medium;
-}
-.login-container {
+.register-container {
     width: 300px;
     margin: 50px auto;
     padding: 20px;
@@ -13,12 +8,13 @@
     text-align: center;
 }
 
-.login-container h2 {
+.register-container h2 {
     margin-bottom: 20px;
     color: #343a40;
 }
 
-.login-container input {
+.register-container input,
+.register-container select {
     width: 90%;
     padding: 10px;
     margin: 10px 0;
@@ -26,21 +22,16 @@
     border-radius: 5px;
 }
 
-.login-container .submit {
+.register-container button {
     width: 95%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #28a745;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.login-container .submit:hover {
-    background-color: #0056b3;
-}
-
-.login-container .wrong {
-    color: red;
-    margin-top: 10px;
+.register-container button:hover {
+    background-color: #218838;
 }

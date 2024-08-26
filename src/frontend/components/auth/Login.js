@@ -1,24 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useAuth } from './AuthContext';  // Import useAuth from the AuthProvider
+import { useAuth } from './AuthContext';
 import './Login.css';
+// import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {toast, ToastContainer} from "react-toastify";
 
-function Login() {
+function Login({ showMessage }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    const { login } = useAuth();  // Destructure the login function from useAuth
+    const { login } = useAuth();
     const [wrongPass, setWrongPass] = useState(false);
+
+    useEffect(() => {
+        if (showMessage) {
+            toast.info("Oh, you need to be logged in to access this page!");
+        }
+    }, [showMessage]);
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('/auth/login', { username, password });
             const token = response.data.token;
-            localStorage.setItem('token', token);
-            login();  // Update the authentication state
-            navigate('/dashboard'); // Redirect to the dashboard
+            login(token);
+            navigate('/dashboard');
         } catch (error) {
             console.error("Login error", error);
             setWrongPass(true);
@@ -26,7 +34,7 @@ function Login() {
     };
 
     return (
-        <div>
+        <div className="login-container">
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <input
@@ -46,6 +54,7 @@ function Login() {
                 <button type="submit" className="submit">Login</button>
             </form>
             {wrongPass && <div className="wrong">WRONG USERNAME OR PASSWORD, PLEASE TRY AGAIN</div>}
+            <ToastContainer />
         </div>
     );
 }

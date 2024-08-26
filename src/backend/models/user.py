@@ -7,12 +7,14 @@ class User:
     def __init__(self, db):
         self.collection = db.users
 
-    def create_user(self, username, email, password):
+    def create_user(self, username, email, password, role, is_verified):
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         user = {
             "username": username,
             "email": email,
-            "password": hashed_password
+            "password": hashed_password,
+            "role": role,
+            "is_verified": is_verified
         }
         self.collection.insert_one(user)
 
