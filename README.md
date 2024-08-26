@@ -130,7 +130,7 @@ Welcome to the **Randeat** project! This application helps users discover new re
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/rae-ra/randeat.git
    ```
 
 2. **Navigate to the Project Directory:**
