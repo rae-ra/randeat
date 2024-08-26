@@ -174,5 +174,8 @@ Feel free to contribute to this project by opening issues or submitting pull req
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-Feel free to adjust the details as needed to fit your specific requirements and development progress.
+Images used:
+[mangochicken](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ambitiouskitchen.com%2Fwp-content%2Fuploads%2F2018%2F06%2Fmangochicken-2.jpg&f=1&nofb=1&ipt=cd65ab95cfdef290371672b9ec45587fdf000d8381a398074e5ac75240c60d4e&ipo=images)
+[avocadomousse](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fkeyassets-p2.timeincuk.net%2Fwp%2Fprod%2Fwp-content%2Fuploads%2Fsites%2F53%2F2019%2F12%2FAvocado-chocolate-mousse-1842.jpg&f=1&nofb=1&ipt=d7b4bab380ade8b33bc53370e53d3026712c40375b2b8e6c41d3a89a7d132580&ipo=images)
+[maplebacon](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.almostsupermom.com%2Fwp-content%2Fuploads%2F2016%2F03%2FMaple-Bacon-Pancakes-4517.jpg&f=1&nofb=1&ipt=b9583475f65038e915ef085e4e3f6cf9d147677e40f353c6011b2fd7673e8d3f&ipo=images)
+[logo](https://www.svgrepo.com/svg/105592/cooking)
