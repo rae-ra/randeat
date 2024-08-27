@@ -42,7 +42,7 @@ function CardsContainer({ cardsData, autoplay, autoplaySpeed }) {
                         image={card.image}
                         title={card.title}
                         description={card.description}
-                        linkText={card.lidisablednkText}
+                        linkText={card.linkText}
                         linkUrl={card.linkUrl}
                         hidden={index !== currentIndex}
                     />

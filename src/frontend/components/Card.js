@@ -12,6 +12,7 @@ function Card({ image, title, description, linkText, linkUrl, hidden}) {
                 <h2>{title}</h2>
                 <div>
                     {description}
+                    <br/>
                     {linkText && linkUrl && (
                         <a href={linkUrl} className="register-link">{linkText}</a>
                     )}

@@ -43,5 +43,8 @@ def login():
                                    "in."}), 403
 
     token = create_token(identity={"username": username, "role": user['role']})
-    print(token)
     return jsonify({"token": token}), 200
+
+# sudo service mongod restart
+# sudo systemctl status mongod
+# sudo service mongod stop

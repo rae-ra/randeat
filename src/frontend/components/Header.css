@@ -1,7 +1,7 @@
 :root {
-    --navbar-bg-color: hsl(0, 0%, 15%);
+    --navbar-bg-color: hsla(336, 94%, 63%, 0.61);
     --navbar-text-color: hsl(0, 0%, 85%);
-    --navbar-text-color-focus: white;
+    --navbar-text-color-focus: #ffffff;
     --navbar-bg-contrast: hsl(0, 0%, 25%);
 }
 
@@ -41,6 +41,7 @@ main {
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     z-index: 10;
+    border-bottom-left-radius: 25px
 }
 
 .navbar-container {

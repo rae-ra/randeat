@@ -20,14 +20,14 @@ function App() {
           <header className="App-header">
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/create-recipe" element={<PrivateRoute><CreateRecipe /></PrivateRoute>} />
+                <Route path="/create-recipe" element={<PrivateRoute chefOnly={true}><CreateRecipe /></PrivateRoute>} />
                 <Route path="/recipes" element={<Recipes />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login showMessage={false}/>} />
-                <Route path="/pleaselogin" element={<Login showMessage={true}/>} />
-                <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-                <Route path="/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
+                <Route path="/pleaselogin" element={<Login showMessage={false}/>} />
+                <Route path="/dashboard" element={<PrivateRoute chefOnly={false}><Dashboard /></PrivateRoute>} />
+                <Route path="/logout" element={<PrivateRoute chefOnly={false}><Logout /></PrivateRoute>} />
             </Routes>
           </header>
         </div>
